@@ -1,0 +1,11 @@
+# ビルドの成果物を無視する
+/build/
+
+# MPI 用ホストファイルを無視する
+hostfile
+
+# ベンチマーク関連を無視する
+/Bench/
+proc.php
+run.sh
+
