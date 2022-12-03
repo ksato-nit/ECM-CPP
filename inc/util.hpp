@@ -9,7 +9,6 @@ public:
     static Integer lcm(Integer, Integer);
     static Integer klcm(Integer);
     static Integer modInv(Integer, Integer);
-    static Integer getOrder(EllipticCurve, Point);
     static Integer pow(Integer, Integer, Integer);
     static std::queue<Integer> getPrimes(Integer, int);
 private:

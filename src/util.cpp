@@ -52,31 +52,6 @@ Integer Util::modInv(Integer a, Integer N){
     return x;
 }
 
-Integer Util::getOrder(EllipticCurve e, Point p){
-    Integer M = TWO;
-    std::queue<Integer> primes = Util::getPrimes(M, 3);
-    Integer l = primes.front();
-    primes.pop();
-    Integer q = e.getCharacteristic();
-    std::vector<std::pair<Integer, Integer>> S;
-    while(M < 4 * q){
-        Integer tau = 0;
-        for(; tau < (l - 1) / 2; ++tau){
-            Integer x = p.getX();
-            Integer y = p.getY();
-            Point phiP(Util::pow(x, q, q), Util::pow(y, q, q), e);
-            if((Util::pow(x, q * q, q)) + (p * q).getX() == (phiP * tau).getX() && (Util::pow(y, q * q, q)) + (p * q).getY() == (phiP * tau).getY()){
-                break;
-            }
-        }
-        S.push_back(std::make_pair(tau, l));
-        M = M * l;
-        l = primes.front();
-        primes.pop();
-    }
-    return ZERO; // stab.
-}
-
 Integer Util::pow(Integer a, Integer b, Integer q){
     /*
     TODO: 多倍長整数の累乗を実装する．

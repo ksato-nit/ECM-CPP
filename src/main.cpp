@@ -3,7 +3,7 @@
 #include "primality_test.hpp"
 #include "util.hpp"
 #include <time.h>
-Integer N("2183");
+Integer N("2924077739655891297001");
 
 int main(){
     Factorization f;
@@ -12,6 +12,7 @@ int main(){
     while(i){
         Integer r = f.factorize(N);
         if (r > ZERO){
+            std::cout << "Prime factor:" << std::endl;
             std::cout << r << std::endl;
             --i;
         }
